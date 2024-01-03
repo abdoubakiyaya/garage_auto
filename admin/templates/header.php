@@ -32,6 +32,7 @@
               <li><a class="dropdown-item" href="#">Déconnexion</a></li>
             </ul>
           </div>
+
           <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
               <a href="#" class="nav-link active" aria-current="page">
@@ -64,6 +65,7 @@
               </a>
             </li>
           </ul>
+
           <hr>
           <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
             <svg class="bi pe-none me-2" width="40" height="32">
@@ -71,6 +73,7 @@
             </svg>
             <span class="fs-4 fw-bold">Grage V.Parrot</span>
           </a>
+
         </div>
       </section>
     </header>

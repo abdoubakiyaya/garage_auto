@@ -1,2 +1,4 @@
+#Ignorer les fichiers config et garage_automobile_vp
 config.php
 garage_automobile_vp.sql
+
