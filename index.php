@@ -1,8 +1,13 @@
 <?php
+require_once __DIR__ . "/lib/config.php";
+require_once __DIR__ . "/lib/pdo.php";
 require_once __DIR__ . "/templates/header.php";
 require_once __DIR__ . "/lib/menu.php";
 require_once __DIR__ . "/lib/prestation.php";
 require_once __DIR__ . "/lib/article.php";
+
+
+$cars = getCars($pdo, _HOME_ARTICLES_LIMIT_);
 
 ?>
 
