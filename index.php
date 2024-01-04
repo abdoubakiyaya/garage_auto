@@ -78,7 +78,7 @@ require_once __DIR__ . "/lib/article.php";
 <section>
   <div class="container">
     <div class="text-center py-5">
-      <a class="" href="">voir plus de voitures<i class="fa-solid fa-arrow-right m-2"></i></a>
+      <a class="" href="/voitures.php">voir plus de voitures<i class="fa-solid fa-arrow-right m-2"></i></a>
     </div>
   </div>
 </section>
