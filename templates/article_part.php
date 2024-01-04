@@ -1,14 +1,6 @@
 <?php
 
-
-// if ($car["image"] === null) {
-//   $image_path = _ASSETS_IMAGES_FOLDER_ . "car_default.jpg";
-// } else {
-//   $image_path = _CARS_IMAGES_FOLDER_ . htmlentities($car["image"]);
-// }
-
-
-
+$image_path = getCarImage($car["image"]); //erreur d'image
 
 ?>
 
@@ -27,7 +19,7 @@
       <h6 class="card-price fw-bold"><?= htmlentities($car["price"]) ?></h6>
     </div>
     <div class="text-center pb-3">
-      <a href="/voiture.php?id=<?= htmlentities($key) ?>" class="btn btn-sm btn-dark">
+      <a href="/voiture.php?id=<?= htmlentities($car["idCars"]) ?>" class="btn btn-sm btn-dark">
         Détails
       </a>
     </div>

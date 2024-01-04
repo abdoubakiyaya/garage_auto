@@ -1,13 +1,5 @@
 <?php
 
-// $cars = [
-//   ["marque" => "Audi", "annee" => "2000", "tipe_de_carburant" => "Diesel", "prix" => "4500€", "image" => "1-audi.jpg", "kilometrage" => "20000 km", "content" => "Audi Quickly design and customize responsive mobile-first "],
-//   ["marque" => "Opel", "annee" => "2005", "tipe_de_carburant" => "Gaz", "prix" => "1000€", "image" => "2-opel.jpg", "kilometrage" => "50000 km", "content" => "Opel sites with Bootstrap, the world’s most popular front-end open "],
-//   ["marque" => "Toyota", "annee" => "2000", "tipe_de_carburant" => "Hydrogene", "prix" => "800€", "image" => "3-toyota.jpg", "kilometrage" => "70000 km", "content" => "Toyota source toolkit, featuring Sass variables and mixins, responsive "],
-//   ["marque" => "Dacia", "annee" => "2000", "tipe_de_carburant" => "Essence", "prix" => "600€", "image" => "4-dacia.jpg", "kilometrage" => "92000 km", "content" => "Dacia grid system, extensive prebuilt components, and powerful JavaScript plugins. "],
-// ];
-
-
 
 function getCars(PDO $pdo, int $limit = null): array
 {
@@ -26,4 +18,29 @@ function getCars(PDO $pdo, int $limit = null): array
   $cars = $query->fetchAll(PDO::FETCH_ASSOC);
 
   return $cars;
+}
+
+
+function getCarById(PDO $pdo, int $id): array | bool
+{
+  $sql = "SELECT * FROM cars WHERE idCars = :idCars";
+
+  $query = $pdo->prepare($sql);
+
+  $query->bindValue(":idCars", $id, PDO::PARAM_INT);
+
+  $query->execute();
+  $car = $query->fetch(PDO::FETCH_ASSOC);
+
+  return $car;
+}
+
+// erreur d'image
+function getCarImage(string|null $image): string
+{
+  if ($image === null) {
+    return _ASSETS_IMAGES_FOLDER_ . "car_default.jpg";
+  } else {
+    return _CARS_IMAGES_FOLDER_ . htmlentities($image);
+  }
 }
