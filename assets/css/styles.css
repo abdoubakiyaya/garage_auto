@@ -9,6 +9,7 @@ a {
   box-sizing: border-box;
 }
 
+/* banniere accueil start*/
 .product-device {
   position: absolute;
   background-color: #333;
@@ -25,9 +26,10 @@ a {
   top: -25%;
   left: -2%;
 }
+/* banniere end */
 
-.btn-bg {
-  --bd-violet-bg: #d92332;
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
   --bs-btn-font-weight: 600;

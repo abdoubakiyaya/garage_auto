@@ -1,28 +1,12 @@
 <?php
 require_once __DIR__ . "/templates/header.php";
-
-$cars = [
-  ["marque" => "Audi", "annee" => "2000", "tipe_de_carburant" => "Diesel", "prix" => "4500€", "image" => "1-audi.jpg", "kilometrage" => "20000 km"],
-  ["marque" => "Opel", "annee" => "2005", "tipe_de_carburant" => "Gaz", "prix" => "1000€", "image" => "2-opel.jpg", "kilometrage" => "50000 km"],
-  ["marque" => "Toyota", "annee" => "2000", "tipe_de_carburant" => "Hydrogene", "prix" => "800€", "image" => "3-toyota.jpg", "kilometrage" => "70000 km"],
-  ["marque" => "Dacia", "annee" => "2000", "tipe_de_carburant" => "Essence", "prix" => "600€", "image" => "4-dacia.jpg", "kilometrage" => "92000 km"],
-];
-
-$prestations = [
-
-  ["titre" => "Revision", "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nostrum cupiditate nemo. Placeat, quae sit! Nostrum modi iste, ullam et blanditiis, voluptatem molestias aliquid nam veniam sapiente rem cumque magnam.
-", "prix" => "45€", "image" => "1-prest.png"],
-  ["titre" => "Amortisseurs", "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nostrum cupiditate nemo. Placeat, quae sit! Nostrum modi iste, ullam et blanditiis, voluptatem molestias aliquid nam veniam sapiente rem cumque magnam.
-", "prix" => "50€", "image" => "1-prest.png"],
-  ["titre" => "Vidange", "content" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat nostrum cupiditate nemo. Placeat, quae sit! Nostrum modi iste, ullam et blanditiis, voluptatem molestias aliquid nam veniam sapiente rem cumque magnam.
-", "prix" => "40€", "image" => "1-prest.png"],
-
-];
+require_once __DIR__ . "/lib/menu.php";
+require_once __DIR__ . "/lib/prestation.php";
+require_once __DIR__ . "/lib/article.php";
 
 ?>
 
-
-<!-- titre -->
+<!-- title reparations -->
 <section>
   <div class="position-relative overflow-hidden p-3 p-md-3 m-md-5 text-center bg-body-tertiary">
     <div class="col-lg-6 p-lg-5 mx-auto my-5">
@@ -32,10 +16,11 @@ $prestations = [
     <div class="product-device product-device-2 shadow-sm d-none d-lg-block d-xl-block"></div>
   </div>
 </section>
-<!--affichage dynamique des prestations -->
+
+<!-- prestations -->
 <section>
-  <div class="container py-5">
-    <div class="row row-cols-1 row-cols-md-3 g-4 text-start">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-6 g-4 text-start">
       <?php foreach ($prestations as $key => $prestation) { ?>
         <div class="col">
           <div class="card border-0">
@@ -55,35 +40,45 @@ $prestations = [
 
 <!-- division -->
 <section>
-  <div class=" container divided py-5">
+  <div class=" container divider ">
     <hr>
   </div>
 </section>
 
-<!--affichage dynamique des voitures -->
+<!-- title cars -->
+<section>
+  <div class="container ">
+    <div class="  px-4 py-5 text-center">
+      <div class="py-5">
+        <h1 class="display-5 fw-bold text-dark">Trouver votre voiture de rêve</h1>
+        <div class="col-lg-6 mx-auto">
+          <p class="fs-5 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Custom button</button>
+            <button type="button" class="btn btn-outline-primary btn-lg px-4">Secondary</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- cars -->
 <section>
   <div class="container">
     <div class="row row-cols-1 row-cols-md-4 g-4 text-start">
-      <?php foreach ($cars as $key => $car) { ?>
-        <div class="col">
-          <div class="card">
-            <img src="/uploads/articles/<?= $car["image"] ?>" class="card-img-top" alt="<?= $car["marque"] ?>">
-            <div class="card-body">
-              <h6 class="card-marque fw-bold"><?= htmlentities($car["marque"]) ?></h6>
-              <h6 class="card-type-carburant fw-bold"><?= htmlentities($car["tipe_de_carburant"]) ?></h6>
-              <h6 class="card-annee"><?= htmlentities($car["annee"]) ?></h6>
-              <h6 class="card-kilometrage"><?= htmlentities($car["kilometrage"]) ?></h6>
-              <hr>
-              <h6 class="card-price fw-bold"><?= htmlentities($car["prix"]) ?></h6>
-            </div>
-            <div class="text-center pb-3">
-              <button type="button" class="btn btn-sm btn-dark">
-                Détails
-              </button>
-            </div>
-          </div>
-        </div>
-      <?php } ?>
+      <?php foreach ($cars as $key => $car) {
+        require __DIR__ . "/templates/article_part.php";
+      } ?>
+    </div>
+  </div>
+</section>
+
+<!-- voir plus -->
+<section>
+  <div class="container">
+    <div class="text-center py-5">
+      <a class="" href="">voir plus de voitures<i class="fa-solid fa-arrow-right m-2"></i></a>
     </div>
   </div>
 </section>
