@@ -42,36 +42,7 @@ $adminMenu = [
         </div>
 
         <ul class="nav nav-pills flex-column ">
-          <!-- <li class="nav-item ">
-            <a href="#" class="nav-link active text-nowrap" aria-current="page">
-              <i class="fa-solid fa-gauge me-2 "></i>
-              Tableau de bord
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <i class="fa-solid fa-wrench me-2"></i>
-              Prestations
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <i class="fa-solid fa-car me-2"></i>
-              Articles
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <i class="fa-solid fa-clock me-2"></i>
-              Horaires
-            </a>
-          </li>
-          <li>
-            <a href="#" class="nav-link text-white">
-              <i class="fa-solid fa-user me-2"></i>
-              Utilisateurs
-            </a>
-          </li> -->
+
           <?php foreach ($adminMenu as $page => $titre) { ?>
             <li class="nav-item"><a href="<?= $page; ?>" class="nav-link text-white <?php if (basename($_SERVER['SCRIPT_NAME']) === $page) {
                                                                                       echo 'active';

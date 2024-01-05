@@ -9,7 +9,6 @@
 <div class="col">
   <div class="card">
     <img src="<?= _CARS_IMAGES_FOLDER_ ?>/<?= htmlentities($car["image"]) ?>" class="card-img-top" alt="<?= htmlentities($car["brand"]) ?>">
-    <!-- <img src="_CARS_IMAGES_FOLDER_.<?= htmlentities($car["image"]) ?>" class="card-img-top" alt="<?= htmlentities($car["brand"]) ?>"> -->
     <div class="card-body">
       <h6 class="card-marque fw-bold"><?= htmlentities($car["brand"]) ?></h6>
       <h6 class="card-type-carburant fw-bold"><?= htmlentities($car["fuel_type"]) ?></h6>

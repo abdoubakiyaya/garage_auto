@@ -44,24 +44,7 @@ function getTotalCars(PDO $pdo): int|bool
   return $result['total'];
 }
 
-// function saveCar(PDO $pdo, string $brand, string $model, int $year, string $fuel_type, int $mileage, int $price, string|null $image, string $detail, int $id = null): bool
 
-// {
-//   if ($id === null) {
-//     $query = $pdo->prepare("INSERT INTO cars (brand, model, year, fuel_type, mileage, price, image, detail) "
-//       . "VALUES(:brand, :model, :year, :fuel_type, :mileage, :price, :image, :detail)");
-//   } else {
-//     $query = $pdo->prepare("UPDATE `cars` SET `car` = :car, "
-//       . "`detail` = :detail, "
-//       . "image = :image, WHERE `idCars` = :idCars;");
-
-//     $query->bindValue(':idCars', $id, $pdo::PARAM_INT);
-//   }
-//   $query->bindValue(':detail', $brand, $pdo::PARAM_STR);
-//   $query->bindValue(':detail', $detail, $pdo::PARAM_STR);
-//   $query->bindValue(':image', $image, $pdo::PARAM_STR);
-//   return $query->execute();
-// }
 function saveCar(PDO $pdo, string $brand, string $model, int $year, string $fuel_type, int $mileage, int $price, ?string $image, string $detail, int $id = null): bool
 {
   if ($id === null) {
