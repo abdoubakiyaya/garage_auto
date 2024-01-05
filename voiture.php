@@ -14,7 +14,7 @@ if (isset($_GET["id"])) {
   $car = getCarById($pdo, $id);
 
   if ($car) {
-    $image_path = getCarImage($car["image"]); //erreur d'image
+    // $image_path = getCarImage($car["image"]); //erreur d'image
     $mainMenu["voiture.php"] = ["title" => $car["brand"], "meta_description" => $car["detail"], "exclude" => true];
   } else {
     $error = true;

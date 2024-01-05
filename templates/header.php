@@ -59,8 +59,7 @@ $mainMenu = [
           <a href="logout.php" class="btn btn-outline-primary me-2">Déconnexion</a>
 
         <?php } else { ?>
-          <a href="login.php" class="btn btn-outline-primary me-2">login</a>
-          <a href="inscription.php" class="btn btn-primary">Inscription</a>
+          <a href="login.php" class="btn btn-sm btn-outline-primary me-2">login</a>
         <?php } ?>
       </div>
     </header>

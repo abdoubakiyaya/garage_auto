@@ -1,9 +1,12 @@
 <?php
-require_once __DIR__ . "/lib/config.php";
-require_once __DIR__ . "/lib/session.php";
-require_once __DIR__ . "/lib/pdo.php";
-require_once __DIR__ . "/lib/user.php";
-require_once __DIR__ . "/templates/header.php";
+
+require_once 'lib/config.php';
+require_once 'lib/session.php';
+require_once 'lib/pdo.php';
+require_once 'lib/user.php';
+
+require_once 'templates/header.php';
+
 
 $errors = [];
 $messages = [];
@@ -17,8 +20,8 @@ if (isset($_POST['loginUser'])) {
     $_SESSION['user'] = $user;
     if ($user['role'] === 'admin') {
       header('location: admin/index.php');
-    } else if ($user['role'] === 'user') {
-      header('location: a_employe/index.php');
+    } else {
+      header('location: index.php');
     }
   } else {
     $errors[] = 'Email ou mot de passe incorrect';
@@ -26,6 +29,8 @@ if (isset($_POST['loginUser'])) {
 }
 
 ?>
+
+
 
 <?php foreach ($messages as $message) { ?>
   <div class="alert text-center alert-success" role="alert">
@@ -38,7 +43,8 @@ if (isset($_POST['loginUser'])) {
   </div>
 <?php } ?>
 
-<div class="form-signin card m-auto my-5" style="max-width: 330px; padding: 1rem">
+
+<div class="form-signin m-auto" style="max-width: 330px; padding: 1rem">
   <form method="post">
     <!-- <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
     <div class="text-center">
@@ -54,13 +60,17 @@ if (isset($_POST['loginUser'])) {
       <label for="password">Mot de passe</label>
     </div>
 
-    <div class="text-start my-3">
-      <input class="btn btn-bg w-100 py-2" value="Connexion" name="loginUser" type="submit">
-      <p class="mt-5 mb-3 text-body-secondary">© 2012–2023</p>
+    <div class="form-check text-start my-3">
+      <input class="form-check-input" type="checkbox" value="remember-me" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Remember me
+      </label>
     </div>
-
+    <input class="btn btn-primary w-100 py-2" value="Connexion" name="loginUser" type="submit">
+    <p class="mt-5 mb-3 text-body-secondary">© 2012–2023</p>
   </form>
 </div>
+
 
 <?php
 require_once __DIR__ . "/templates/footer.php";

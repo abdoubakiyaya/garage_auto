@@ -25,7 +25,7 @@ $stmt->bindValue(':mileage', $mileage, PDO::PARAM_INT);
 $stmt->bindValue(':price', $price, PDO::PARAM_STR);
 $stmt->bindValue(':image_id', $image_id, PDO::PARAM_STR);
 
-// $stmt->execute();
+//$stmt->execute();
 
 // --------------------------------------------
 
