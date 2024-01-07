@@ -35,9 +35,9 @@ if (isset($_POST['addUser'])) {
     <?= $error; ?>
   </div>
 <?php } ?>
-<div class="m-auto card my-5" style="max-width: 330px; padding: 1rem">
+<div class="m-auto card my-5" style="max-width: 500px; padding: 1rem">
   <div class="text-center">
-    <h1>Inscription</h1>
+    <h1 class="fs-3 fw-bold py-4">Ajouter un utilisateur</h1>
   </div>
   <form method="POST">
     <div class="mb-3">

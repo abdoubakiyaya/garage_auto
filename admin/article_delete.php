@@ -12,9 +12,9 @@ $car = false;
 $errors = [];
 $messages = [];
 if (isset($_GET["id"])) {
-  $article =  getCarById($pdo, $_GET["id"]);
+  $car =  getCarById($pdo, $_GET["id"]);
 }
-if ($article) {
+if ($car) {
   if (deleteCar($pdo, $_GET["id"])) {
     $messages[] = "L'article a bien été supprimé";
   } else {

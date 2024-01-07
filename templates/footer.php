@@ -38,15 +38,16 @@
         </div>
 
         <div class="col-md-5 offset-md-1 mb-3">
-          <form>
-            <h5>Subscribe to our newsletter</h5>
-            <p>Monthly digest of what's new and exciting from us.</p>
-            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-              <label for="newsletter1" class="visually-hidden">Email address</label>
-              <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-              <button class="btn btn-primary" type="button">Subscribe</button>
-            </div>
-          </form>
+          <h3 class="mb-4">Heures d'ouverture</h3>
+          <ul class="list-unstyled">
+            <li>Lundi : 8h00 - 18h00</li>
+            <li>Mardi : 8h00 - 18h00</li>
+            <li>Mercredi : 8h00 - 18h00</li>
+            <li>Jeudi : 8h00 - 18h00</li>
+            <li>Vendredi : 8h00 - 18h00</li>
+            <li>Samedi : 9h00 - 16h00</li>
+            <li>Dimanche : <strong class="text-danger">Fermé</strong></li>
+          </ul>
         </div>
       </div>
 
@@ -72,6 +73,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </body>
 

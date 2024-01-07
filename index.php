@@ -7,6 +7,7 @@ require_once __DIR__ . "/lib/article.php";
 
 
 $cars = getCars($pdo, _HOME_ARTICLES_LIMIT_);
+$prestations = getPrestations($pdo);
 
 ?>
 
@@ -28,12 +29,16 @@ $cars = getCars($pdo, _HOME_ARTICLES_LIMIT_);
       <?php foreach ($prestations as $key => $prestation) { ?>
         <div class="col">
           <div class="card border-0">
-            <img src="/uploads/prestations/<?= $prestation["image"] ?>" class="card-img-top" alt="<?= $prestation["titre"] ?>">
+            <div>
+              <img src="/uploads/prestations/revision_base.jpg" class="card-img-top" alt="<?= htmlentities($prestation["prestation_name"]) ?>">
+              <a class="bg-danger text-light p-2 card" href="/prestation.php?id=<?= htmlentities($prestation["idPrestation"]) ?>">Prendre rendez-vous</a>
+            </div>
+
             <div class="card-body">
-              <h6 class="card-title fw-bold"><?= htmlentities($prestation["titre"]) ?></h6>
-              <h6 class="">A partir de <strong class="text-danger"><?= htmlentities($prestation["prix"]) ?></strong></h6>
+              <h6 class="card-title fw-bold"><?= htmlentities($prestation["prestation_name"]) ?></h6>
+              <h6 class="">A partir de <strong class="text-danger"><?= htmlentities($prestation["price"]) ?></strong></h6>
               <hr>
-              <p><?= htmlentities($prestation["content"]) ?></p>
+              <p><?= htmlentities($prestation["description"]) ?></p>
             </div>
           </div>
         </div>

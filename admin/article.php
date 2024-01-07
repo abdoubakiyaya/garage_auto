@@ -109,8 +109,8 @@ if (isset($_POST['saveCar'])) {
 ?>
 
 
-<div class="m-auto p-5">
-  <h1><?= $pageTitle; ?></h1>
+<div class="m-auto pt-3 my-5 card">
+  <h1 class="fw-bold fs-3 m-auto"><?= $pageTitle; ?></h1>
 
   <?php foreach ($messages as $message) { ?>
     <div class="alert alert-success" role="alert">
@@ -125,7 +125,7 @@ if (isset($_POST['saveCar'])) {
 
 
   <?php if ($car !== false) { ?>
-    <div class="container card m-auto" style="max-width: 500px; padding: 1rem">
+    <div class="container m-auto" style="max-width: 500px; padding: 1rem">
       <form class="row g-3" method="POST" enctype="multipart/form-data">
         <div class="col-md-6">
           <label for="brand" class="form-label">Marque</label>
@@ -157,7 +157,7 @@ if (isset($_POST['saveCar'])) {
         </div>
         <div class="mb-3">
           <label for="car_image" class="form-label">Image de la voiture</label>
-          <input type="file" name="car_image" class="form-control" aria-label="file example" required>
+          <input type="file" name="car_image" class="form-control" aria-label="file example">
         </div>
 
         <?php if (isset($_GET['id']) && isset($car['image'])) { ?>
