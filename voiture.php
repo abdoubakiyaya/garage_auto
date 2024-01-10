@@ -43,8 +43,9 @@ require_once __DIR__ . "/templates/header.php";
         <span><?= htmlentities($car["mileage"]) ?> /</span>
         <span> Type de carburant <?= htmlentities($car["fuel_type"]) ?> </span> <br> <br>
         <strong>Prix <?= htmlentities($car["price"]) ?></strong>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start py-3">
-          <button type="button" class="btn btn-sm btn-outline-secondary btn-lg px-4">Nous contacter</button>
+        <div class="d-grid gap-3 d-md-flex justify-content-md-start py-4">
+          <a href="contact.php" class="btn btn-sm btn-danger btn-lg px-4">Prendre <br> rendez-vous</a>
+          <p class="text-center fw-bold">ou appelez le <br> <strong class="text-danger">+33 1 23 45 67 89</strong></p>
         </div>
       </div>
 
