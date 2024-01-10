@@ -92,6 +92,82 @@ $prestations = getPrestations($pdo);
   </div>
 </section>
 
+<!-- les commentaires -->
+<section>
+  <div class="container w-50">
+    <hr>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <!-- Liste des commentaires approuvés -->
+      <h2 class="mt-5">Commentaires approuvés</h2>
+      <!-- Carrousel Bootstrap pour les commentaires -->
+      <div id="commentairesCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <?php
+          // Connexion à la base de données
+
+          // Récupérer les commentaires approuvés
+          $sql = "SELECT * FROM commentaires WHERE statut = 'approuvé' ORDER BY date_creation DESC";
+          $stmt = $pdo->query($sql);
+          $commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+          $i = 0;
+          foreach ($commentaires as $commentaire) {
+            echo '<div class="carousel-item ' . ($i == 0 ? 'active' : '') . '">';
+            echo '<div class="text-success p-3">';
+            echo '<div class="card-body">';
+            echo '<h5 class="card-title">' . $commentaire['nom_utilisateur'] . ' - ' . $commentaire['note'] . ' étoiles</h5>';
+            echo '<p class="card-text">' . $commentaire['commentaire'] . '</p>';
+            echo '</div>';
+            echo '</div>';
+            echo '</div>';
+            $i++;
+          }
+          ?>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  </div>
+</section>
+
+<section>
+  <div class="container py-5">
+    <div class="row">
+      <div class=" col-md-6 m-auto">
+        <form method="post" action="traitement_commentaire.php">
+          <h2>Ajouter un commentaire</h2>
+          <div class="form-group">
+            <label for="nom_utilisateur">Nom :</label>
+            <input type="text" class="form-control" id="nom_utilisateur" name="nom_utilisateur" required>
+          </div>
+          <div class="form-group">
+            <label for="note">Note :</label>
+            <select class="form-control" id="note" name="note">
+              <option value="1">1 étoile</option>
+              <option value="2">2 étoiles</option>
+              <option value="3">3 étoiles</option>
+              <option value="4">4 étoiles</option>
+              <option value="5">5 étoiles</option>
+            </select>
+          </div>
+          <div class="form-group my-3">
+            <label for="commentaire">Commentaire :</label>
+            <textarea class="form-control" id="commentaire" name="commentaire" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary mb-3">Soumettre le commentaire</button>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+</section>
 
 <?php
 require_once __DIR__ . "/templates/footer.php";

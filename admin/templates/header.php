@@ -6,6 +6,7 @@ $adminMenu = [
   'articles.php' => 'Articles',
   'horaire.php' => 'Horaires',
   'utilisateurs.php' => 'Utilisateurs',
+  'commentaires.php' => 'Commentaires',
 ];
 ?>
 
