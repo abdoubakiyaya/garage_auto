@@ -5,8 +5,6 @@ require_once __DIR__ . "/templates/header.php";
 
 ?>
 
-
-
 <div class="container">
   <h1 class="mt-5">Administration des horaires d'ouverture</h1>
   <?php
@@ -19,15 +17,17 @@ require_once __DIR__ . "/templates/header.php";
       $daysOfWeek = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
 
       foreach ($daysOfWeek as $day) {
-        $openingTime = $_POST[$day . '_ouverture'];
-        $closingTime = $_POST[$day . '_fermeture'];
+        $openingTime = isset($_POST[$day . '_ouverture']) ? $_POST[$day . '_ouverture'] : null;
+        $closingTime = isset($_POST[$day . '_fermeture']) ? $_POST[$day . '_fermeture'] : null;
+        $closed = isset($_POST[$day . '_closed']) ? 1 : 0; // Vérifie si la case "fermé" est cochée
 
         // Préparez et exécutez la requête SQL d'update
-        $sql = "UPDATE horaires SET heure_ouverture = :ouverture, heure_fermeture = :fermeture WHERE jour_semaine = :jour";
+        $sql = "UPDATE horaires SET heure_ouverture = :ouverture, heure_fermeture = :fermeture, ferme = :ferme WHERE jour_semaine = :jour";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':ouverture', $openingTime);
         $stmt->bindParam(':fermeture', $closingTime);
         $stmt->bindParam(':jour', $day);
+        $stmt->bindParam(':ferme', $closed);
         $stmt->execute();
       }
 
@@ -50,19 +50,27 @@ require_once __DIR__ . "/templates/header.php";
         <th>Jour de la semaine</th>
         <th>Heure d'ouverture</th>
         <th>Heure de fermeture</th>
+        <th>Fermé</th>
       </tr>
       <?php
       // Affichage des horaires actuels depuis la base de données
       foreach ($schedules as $schedule) {
         echo "<tr>";
         echo "<td>{$schedule['jour_semaine']}</td>";
-        echo "<td><input type='time' name='{$schedule['jour_semaine']}_ouverture' value='{$schedule['heure_ouverture']}'></td>";
-        echo "<td><input type='time' name='{$schedule['jour_semaine']}_fermeture' value='{$schedule['heure_fermeture']}'></td>";
+
+        if ($schedule['ferme'] == 1) {
+          echo "<td colspan='2'>Fermé</td>";
+          echo "<td><input type='checkbox' name='{$schedule['jour_semaine']}_closed' checked></td>";
+        } else {
+          echo "<td><input type='time' name='{$schedule['jour_semaine']}_ouverture' value='{$schedule['heure_ouverture']}'></td>";
+          echo "<td><input type='time' name='{$schedule['jour_semaine']}_fermeture' value='{$schedule['heure_fermeture']}'></td>";
+          echo "<td><input type='checkbox' name='{$schedule['jour_semaine']}_closed'></td>";
+        }
+
         echo "</tr>";
       }
       ?>
     </table>
     <button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
-
   </form>
 </div>

@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <h2 class="mb-4">Prendre rendez-vous</h2>
-  <form method="post" action="traitement.php"> <!-- Assurez-vous d'ajouter un attribut "method" et "action" au formulaire -->
+  <form method="post" action="/lib/traitement_rendezvous.php"> <!-- Assurez-vous d'ajouter un attribut "method" et "action" au formulaire -->
     <div class="form-row">
       <div class="form-group col-md-6 my-2">
         <label for="nom">Nom</label>

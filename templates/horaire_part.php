@@ -20,8 +20,12 @@ require_once __DIR__ . "/../lib/config.php";
     foreach ($schedules as $schedule) {
       echo "<tr>";
       echo "<td>{$schedule['jour_semaine']}</td>";
-      echo "<td>{$schedule['heure_ouverture']}</td>";
-      echo "<td>{$schedule['heure_fermeture']}</td>";
+      if ($schedule['ferme'] == 1) {
+        echo "<td colspan='2'>Fermé</td>";
+      } else {
+        echo "<td>{$schedule['heure_ouverture']}</td>";
+        echo "<td>{$schedule['heure_fermeture']}</td>";
+      }
       echo "<tr>";
     }
     ?>
