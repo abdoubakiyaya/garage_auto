@@ -27,7 +27,20 @@ a {
   left: -2%;
 }
 /* banniere end */
+/* slick */
+.slick-prev:before {
+  content: "\f104";
+  color: #999999;
+  font-size: 40px;
+  font-family: "FontAwesome";
+}
 
+.slick-next:before {
+  content: "\f105";
+  color: #999999;
+  font-size: 40px;
+  font-family: "FontAwesome";
+}
 .btn-bd-primary {
   --bd-violet-bg: #712cf9;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;

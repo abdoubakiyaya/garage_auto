@@ -50,7 +50,7 @@ require_once __DIR__ . "/templates/header.php";
         <th>Jour de la semaine</th>
         <th>Heure d'ouverture</th>
         <th>Heure de fermeture</th>
-        <th>Fermé</th>
+        <th class="text-danger">Fermé</th>
       </tr>
       <?php
       // Affichage des horaires actuels depuis la base de données

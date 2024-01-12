@@ -98,41 +98,41 @@ $prestations = getPrestations($pdo);
     <hr>
   </div>
 </section>
-<section>
-  <div class="container">
-    <div class="row">
-      <!-- Liste des commentaires approuvés -->
-      <h2 class="mt-5">Commentaires approuvés</h2>
-      <!-- Carrousel Bootstrap pour les commentaires -->
-      <div id="commentairesCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-          <?php
-          // Connexion à la base de données
 
-          // Récupérer les commentaires approuvés
-          $sql = "SELECT * FROM commentaires WHERE statut = 'approuvé' ORDER BY date_creation DESC";
-          $stmt = $pdo->query($sql);
-          $commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-          $i = 0;
-          foreach ($commentaires as $commentaire) {
-            echo '<div class="carousel-item ' . ($i == 0 ? 'active' : '') . '">';
-            echo '<div class="text-success p-3">';
-            echo '<div class="card-body">';
-            echo '<h5 class="card-title">' . $commentaire['nom_utilisateur'] . ' - ' . $commentaire['note'] . ' étoiles</h5>';
-            echo '<p class="card-text">' . $commentaire['commentaire'] . '</p>';
-            echo '</div>';
-            echo '</div>';
-            echo '</div>';
-            $i++;
-          }
-          ?>
-        </div>
-      </div>
+<section class="pt-5 pb-5">
+  <div class="container pt-5 pb-5">
+    <h2 class="pb-5 text-center">Ils parlent de nous</h2>
+    <div class="card-group autoplay m-auto">
+
+
+      <?php
+      // Récupérer les commentaires approuvés
+      $sql = "SELECT * FROM commentaires WHERE statut = 'approuvé' ORDER BY date_creation DESC";
+      $stmt = $pdo->query($sql);
+      $commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+      foreach ($commentaires as $commentaire) {
+        echo '<div class="p-5 m-">';
+        echo '<div class="card h-100">';
+        echo '<div class="card-body">';
+        echo '<h5 class="card-title">' . $commentaire['nom_utilisateur'] . '</h5>';
+        echo '<p class="card-text">' . $commentaire['commentaire'] . '</p>';
+        echo '<div class="d-flex justify-content-between">';
+        echo '<small>' . $commentaire['date_creation'] . '</small>';
+        echo '<div>';
+        // Étoiles (exemple avec 3 étoiles)
+        for ($i = 0; $i < $commentaire['note']; $i++) {
+          echo '<span class="text-warning">&#9733;</span>';
+        }
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+      }
+      ?>
     </div>
-
-
-  </div>
   </div>
 </section>
 
