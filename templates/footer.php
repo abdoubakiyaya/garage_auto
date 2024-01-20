@@ -66,18 +66,18 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    alert("minimum_price + hello");
 
     filter_data();
-
 
     function filter_data() {
       $('.filter_data').html('<div id="loading" style="" ></div>');
       var action = '/lib/fetch.php';
       var minimum_price = $('#hidden_minimum_price').val();
       var maximum_price = $('#hidden_maximum_price').val();
+      var minimum_mileage = $('#hidden_minimum_mileage').val();
+      var maximum_mileage = $('#hidden_maximum_mileage').val();
       var brand = get_filter('brand');
-
+      var year = get_filter('year');
 
       $.ajax({
         url: "/lib/fetch.php",
@@ -86,9 +86,10 @@
           action: action,
           minimum_price: minimum_price,
           maximum_price: maximum_price,
-          // brand: brand,
-          // ram: ram,
-          // storage: storage
+          minimum_mileage: minimum_mileage,
+          maximum_mileage: maximum_mileage,
+          brand: brand,
+          year: year,
         },
         success: function(data) {
           $('.filter_data').html(data);
@@ -118,6 +119,20 @@
         $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
         $('#hidden_minimum_price').val(ui.values[0]);
         $('#hidden_maximum_price').val(ui.values[1]);
+        filter_data();
+      }
+    });
+
+    $('#mileage_range').slider({
+      range: true,
+      min: 1000,
+      max: 90000,
+      values: [1000, 90000],
+      step: 100,
+      stop: function(event, ui) {
+        $('#mileage_show').html(ui.values[0] + ' - ' + ui.values[1]);
+        $('#hidden_minimum_mileage').val(ui.values[0]);
+        $('#hidden_maximum_mileage').val(ui.values[1]);
         filter_data();
       }
     });
