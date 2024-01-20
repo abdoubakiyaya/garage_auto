@@ -27,20 +27,64 @@ a {
   left: -2%;
 }
 /* banniere end */
-/* slick */
-.slick-prev:before {
-  content: "\f104";
-  color: #999999;
-  font-size: 40px;
-  font-family: "FontAwesome";
+
+/* -------------------------------- */
+/*!
+ * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+
+.slide-image {
+  width: 100%;
 }
 
-.slick-next:before {
-  content: "\f105";
-  color: #999999;
-  font-size: 40px;
-  font-family: "FontAwesome";
+.carousel-holder {
+  margin-bottom: 30px;
 }
+
+.carousel-control,
+.item {
+  border-radius: 4px;
+}
+
+.caption {
+  height: 160px;
+  overflow: hidden;
+}
+
+.caption h4 {
+  white-space: nowrap;
+}
+
+.thumbnail img {
+  width: 100%;
+}
+
+.ratings {
+  padding-right: 10px;
+  padding-left: 10px;
+  color: #d17581;
+}
+
+.thumbnail {
+  padding: 0;
+}
+
+.thumbnail .caption-full {
+  padding: 9px;
+  color: #333;
+}
+/* -------------------------------- */
+
+#loading {
+  text-align: center;
+  background: url("/assets/images/loader.gif") no-repeat center;
+  height: 150px;
+}
+
+/* -------------------------------- */
+
 .btn-bd-primary {
   --bd-violet-bg: #712cf9;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;

@@ -8,9 +8,20 @@ function getCarById(PDO $pdo, int $id): array|bool
   return $query->fetch(PDO::FETCH_ASSOC);
 }
 
+// $con = mysqli_connect("localhost", "root", "", "bdd");
+// if (!$con) {
+//   echo "Not connected";
+// }
+
+// $query = "SELECT * FROM cars WHERE status = '1' ORDER BY idCars DESC";
+// $r = mysqli_query($con, $query);
+
 function getCars(PDO $pdo, int $limit = null, int $page = null): array|bool
 {
-  $sql = "SELECT * FROM cars ORDER BY idCars DESC";
+  // $sql = "SELECT * FROM cars ORDER BY idCars DESC";
+
+  $sql = "SELECT * FROM cars WHERE status = '1' ORDER BY idCars DESC";
+  //$stmt = $pdo->query($query);
 
   if ($limit && !$page) {
     $sql .= " LIMIT  :limit";
@@ -30,9 +41,36 @@ function getCars(PDO $pdo, int $limit = null, int $page = null): array|bool
   }
 
   $query->execute();
-  $result = $query->fetchAll(PDO::FETCH_ASSOC);
-  return $result;
+  $stmt = $query->fetchAll(PDO::FETCH_ASSOC);
+  return $stmt;
 }
+
+// function getCars(PDO $pdo, int $limit = null, int $page = null): array|bool
+// {
+//   $sql = "SELECT * FROM cars ORDER BY idCars DESC";
+
+//   if ($limit && !$page) {
+//     $sql .= " LIMIT  :limit";
+//   }
+//   if ($limit && $page) {
+//     $sql .= " LIMIT :offest, :limit";
+//   }
+
+//   $query = $pdo->prepare($sql);
+
+//   if ($limit) {
+//     $query->bindValue(":limit", $limit, PDO::PARAM_INT);
+//   }
+//   if ($page) {
+//     $offset = ($page - 1) * $limit;
+//     $query->bindValue(":offest", $offset, PDO::PARAM_INT);
+//   }
+
+//   $query->execute();
+//   $result = $query->fetchAll(PDO::FETCH_ASSOC);
+//   return $result;
+// }
+
 
 function getTotalCars(PDO $pdo): int|bool
 {

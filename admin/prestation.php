@@ -129,7 +129,7 @@ if (isset($_POST['savePrestation'])) {
         </div>
         <div class="mb-3">
           <label for="prestation_image" class="form-label">Image de la prestation</label>
-          <input type="file" name="prestation_image" class="form-control" aria-label="file example">
+          <input type="file" name="prestation_image" class="form-control" aria-label="file example" required>
         </div>
 
         <?php if (isset($_GET['id']) && isset($prestation['image'])) { ?>
