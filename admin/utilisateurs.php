@@ -3,10 +3,11 @@ require_once __DIR__ . "/../lib/config.php";
 require_once __DIR__ . "/../lib/tools.php";
 require_once __DIR__ . "/../lib/pdo.php";
 require_once __DIR__ . "/../lib/user.php";
+require_once __DIR__ . "/../lib/session.php";
 
 require_once __DIR__ . "/templates/header.php";
 
-
+adminOnly();
 
 $errors = [];
 $messages = [];
@@ -62,6 +63,7 @@ if (isset($_POST['addUser'])) {
   </form>
 </div>
 
-
 <?php
-require_once 'templates/footer.php';
+
+require_once __DIR__ . "/templates/footer.php";
+?>

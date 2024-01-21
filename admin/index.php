@@ -6,8 +6,6 @@ require_once __DIR__ . "/templates/header.php";
 ?>
 <div>
 
-
-
   <div class="container py-5">
     <section>
       <div class="row row-cols-1 row-cols-md-2 g-4">

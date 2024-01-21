@@ -178,5 +178,7 @@ if (isset($_POST['saveCar'])) {
 
 </div>
 
+<?php
 
-<?php require_once __DIR__ . "/templates/footer.php"; ?>
+require_once __DIR__ . "/templates/footer.php";
+?>

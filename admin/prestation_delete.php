@@ -37,6 +37,3 @@ if ($car) {
     </div>
   <?php } ?>
 </div>
-
-<?php
-require_once('templates/footer.php');

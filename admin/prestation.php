@@ -150,5 +150,7 @@ if (isset($_POST['savePrestation'])) {
 
 </div>
 
+<?php
 
-<?php require_once __DIR__ . "/templates/footer.php"; ?>
+require_once __DIR__ . "/templates/footer.php";
+?>

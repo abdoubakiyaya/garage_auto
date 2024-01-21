@@ -1,10 +1,9 @@
 <?php
 
-// require_once __DIR__ . "/../lib/config.php";
-// require_once __DIR__ . "/../lib/session.php";
-// require_once __DIR__ . "/../lib/menu.php";
+require_once __DIR__ . "/../lib/config.php";
+require_once __DIR__ . "/../lib/session.php";
 
-// $currentPage = basename($_SERVER["SCRIPT_NAME"]);
+//$currentPage = basename($_SERVER["SCRIPT_NAME"]);
 $mainMenu = [
   'index.php' => 'Accueil',
   'voitures.php' => 'Voitures',
@@ -51,7 +50,7 @@ $mainMenu = [
   <div class="container">
     <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
       <div class="col-md-3 mb-2 mb-md-0">
-        <a href="/" class="fw-bold text-dark fs-4 text-nowrap">
+        <a href="/" class="fw-bold text-danger fs-4 text-nowrap">
           Garage V.Parrot
         </a>
       </div>
@@ -59,19 +58,21 @@ $mainMenu = [
 
       <ul class="nav nav-underline">
         <?php foreach ($mainMenu as $page => $titre) { ?>
-          <li class="nav-item"><a href="<?= $page; ?>" class="nav-link <?php if (basename($_SERVER['SCRIPT_NAME']) === $page) {
-                                                                          echo 'active';
-                                                                        } ?>"><?= $titre; ?></a></li>
+          <li class="nav-item"><a href="<?= $page; ?>" class="nav-link 
+          <?php if (basename($_SERVER['SCRIPT_NAME']) === $page) {
+            echo 'active';
+          } ?>"><?= $titre; ?></a></li>
         <?php } ?>
       </ul>
 
-      <div class=" mb-2 justify-content-center mb-md-2">
-
+      <div class="mb-2 justify-content-center mb-md-2">
         <?php if (isset($_SESSION['user'])) { ?>
-          <a href="logout.php" class="btn btn-outline-primary me-2">Déconnexion</a>
-
+          <!-- Utilisateur connecté -->
+          <p class="text-white me-2">Bonjour, <?= $_SESSION['user_firstname']; ?>!</p>
+          <a href="logout.php" class="btn btn-outline-primary">Déconnexion</a>
         <?php } else { ?>
-          <a href="login.php" class="btn btn-sm btn-outline-primary me-2">login</a>
+          <!-- Utilisateur non connecté -->
+          <a href="login.php" class="btn btn-sm btn-outline-primary me-2">Login</a>
         <?php } ?>
       </div>
     </header>

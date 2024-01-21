@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . "/../lib/config.php";
 require_once __DIR__ . "/../lib/session.php";
-// adminOnly();
+adminOnly();
 
 require_once __DIR__ . "/../lib/pdo.php";
 require_once __DIR__ . "/../lib/tools.php";
@@ -39,4 +39,5 @@ if ($car) {
 </div>
 
 <?php
-require_once('templates/footer.php');
+require_once __DIR__ . "/templates/footer.php";
+?>

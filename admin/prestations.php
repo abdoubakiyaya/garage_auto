@@ -1,7 +1,8 @@
 <?php
 require_once __DIR__ . "/../lib/config.php";
 require_once __DIR__ . "/../lib/session.php";
-// adminOnly();
+
+adminOnly();
 
 require_once __DIR__ . "/../lib/pdo.php";
 require_once __DIR__ . "/../lib/prestation.php";
@@ -67,7 +68,7 @@ $totalPages = ceil($totalPrestations / _ADMIN_ITEM_PER_PAGE_);
 
 </div>
 
+<?php
 
-
-
-<?php require_once __DIR__ . "/templates/footer.php"; ?>
+require_once __DIR__ . "/templates/footer.php";
+?>

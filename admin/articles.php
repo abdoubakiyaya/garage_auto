@@ -69,11 +69,7 @@ $totalPages = ceil($totalCars / _ADMIN_ITEM_PER_PAGE_);
 
 </div>
 
+<?php
 
-
-
-
-
-
-
-<?php require_once __DIR__ . "/templates/footer.php"; ?>
+require_once __DIR__ . "/templates/footer.php";
+?>

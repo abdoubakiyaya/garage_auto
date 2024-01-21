@@ -43,11 +43,11 @@ $adminMenu = [
         </div>
 
         <ul class="nav nav-pills flex-column ">
-
           <?php foreach ($adminMenu as $page => $titre) { ?>
-            <li class="nav-item"><a href="<?= $page; ?>" class="nav-link text-white <?php if (basename($_SERVER['SCRIPT_NAME']) === $page) {
-                                                                                      echo 'active';
-                                                                                    } ?>"><?= $titre; ?></a></li>
+            <li class="nav-item"><a href="<?= $page; ?>" class="nav-link text-white 
+            <?php if (basename($_SERVER['SCRIPT_NAME']) === $page) {
+              echo 'active';
+            } ?>"><?= $titre; ?></a></li>
           <?php } ?>
         </ul>
 
