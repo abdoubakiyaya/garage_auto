@@ -6,8 +6,8 @@ require_once 'templates/header.php';
 
 
 <div class="container">
-  <div class="row">
-    <div class="container col-xxl-8 px-4 py-5">
+  <div class="row ">
+    <div class="container col-xxl-8 px-4 my-5 bg-body-secondary rounded-3">
       <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
         <div class="col-10 col-sm-8 col-lg-6">
           <?php

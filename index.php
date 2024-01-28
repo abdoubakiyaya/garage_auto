@@ -13,7 +13,7 @@ $prestations = getPrestations($pdo);
 
 <!-- title reparations -->
 <section>
-  <div class="position-relative overflow-hidden p-3 p-md-3 m-md-5 text-center bg-body-tertiary">
+  <div class="position-relative overflow-hidden p-3 p-md-3 m-md-5 text-center">
     <div class="col-lg-6 p-lg-5 mx-auto my-5">
       <h1 class="display-3 fs-1 fw-bold">Prestations entretien & réparation</h1>
     </div>
@@ -61,11 +61,6 @@ $prestations = getPrestations($pdo);
       <div class="py-5">
         <h1 class="display-5 fw-bold text-dark">Trouver votre voiture de rêve</h1>
         <div class="col-lg-6 mx-auto">
-          <p class="fs-5 mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system, extensive prebuilt components, and powerful JavaScript plugins.</p>
-          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-            <button type="button" class="btn btn-outline-info btn-lg px-4 me-sm-3 fw-bold">Custom button</button>
-            <button type="button" class="btn btn-outline-primary btn-lg px-4">Secondary</button>
-          </div>
         </div>
       </div>
     </div>
@@ -75,7 +70,7 @@ $prestations = getPrestations($pdo);
 <!-- cars -->
 <section>
   <div class="container">
-    <div class="row row-cols-1 row-cols-md-4 g-4 text-start">
+    <div class="row row-cols-1 justify-content-center row-cols-md-4 g-4">
       <?php foreach ($cars as $key => $car) {
         require __DIR__ . "/templates/article_part.php";
       } ?>

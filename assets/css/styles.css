@@ -10,22 +10,7 @@ a {
 }
 
 /* banniere accueil start*/
-.product-device {
-  position: absolute;
-  background-color: #333;
-  right: 5%;
-  bottom: -30%;
-  width: 250px;
-  height: 480px;
-  border-radius: 21px;
-  transform: rotate(30deg);
-}
-.product-device-2 {
-  background-color: #e5e5e5;
-  right: auto;
-  top: -25%;
-  left: -2%;
-}
+
 /* banniere end */
 
 /* -------------------------------- */
@@ -81,6 +66,23 @@ a {
   text-align: center;
   background: url("/assets/images/loader.gif") no-repeat center;
   height: 150px;
+}
+
+/* -------------------------------- */
+/* slick */
+
+.slick-prev:before {
+  content: "\f104";
+  color: #999999;
+  font-size: 40px;
+  font-family: "FontAwesome";
+}
+
+.slick-next:before {
+  content: "\f105";
+  color: #999999;
+  font-size: 40px;
+  font-family: "FontAwesome";
 }
 
 /* -------------------------------- */

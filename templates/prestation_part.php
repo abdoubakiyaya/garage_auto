@@ -1,20 +1,9 @@
-<?php
-
-
-
-
-
-
-
-?>
-
-
 <!-- prestations -->
 
-<div class="col">
-  <div class="card border-0">
+<div class="card-group">
+  <div class="card">
     <div>
-      <img src="/uploads/prestations/<?= htmlentities($prestation["image"]) ?>" class="card-img-top" alt="<?= htmlentities($prestation["prestation_name"]) ?>">
+      <img src="/uploads/prestations/<?= htmlentities($prestation["image"]) ?>" class="card-img-top h-50" alt="<?= htmlentities($prestation["prestation_name"]) ?>">
       <a class="bg-danger text-light p-2 card" href="/prestation.php?id=<?= htmlentities($prestation["id"]) ?>">Prendre rendez-vous</a>
     </div>
     <div class="card-body">

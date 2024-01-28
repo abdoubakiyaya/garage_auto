@@ -15,7 +15,7 @@ require_once __DIR__ . "/lib/pdo.php";
 
     <div class="col-md-3">
 
-      <div class="list-group py-3">
+      <div class="list-group card p-4 bg-danger-subtle">
         <h3>Prix</h3>
         <input type="hidden" id="hidden_minimum_price" value="0" />
         <input type="hidden" id="hidden_maximum_price" value="65000" />
@@ -23,7 +23,7 @@ require_once __DIR__ . "/lib/pdo.php";
         <div class="bg-success" id="price_range"></div>
       </div>
 
-      <div class="list-group py-3">
+      <div class="list-group card mt-3 p-4 bg-danger-subtle">
         <h3>Kilométrage</h3>
         <input type="hidden" id="hidden_minimum_mileage" value="1000" />
         <input type="hidden" id="hidden_maximum_mileage" value="90000" />
@@ -31,7 +31,7 @@ require_once __DIR__ . "/lib/pdo.php";
         <div class="bg-info" id="mileage_range"></div>
       </div>
 
-      <div class="list-group py-3">
+      <div class="list-group card mt-3 p-4 bg-danger-subtle">
         <h3>Marque</h3>
         <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
           <?php
@@ -52,7 +52,7 @@ require_once __DIR__ . "/lib/pdo.php";
         </div>
       </div>
 
-      <div class="list-group py-3">
+      <div class="list-group card mt-3 p-4 bg-danger-subtle">
         <h3>Années</h3>
         <div style="height: 180px; overflow-y: auto; overflow-x: hidden;">
           <?php

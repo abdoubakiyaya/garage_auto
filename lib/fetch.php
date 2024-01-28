@@ -43,8 +43,8 @@ if (isset($_POST["action"])) {
   if ($total_row > 0) {
     foreach ($result as $row) {
       $output .= '
-                <div class="col">
-                    <img src="/uploads/articles/' . $row['image'] . '" class="card-img-top" alt="' . $row['brand'] . '">
+                <div class="card-group">
+                    <img src="/uploads/articles/' . $row['image'] . '" class="card-img-top border" alt="' . $row['brand'] . '">
                     <div class="card">
                         <div class="card-body">
                             <h6 class="card-marque fw-bold">' . $row['brand'] . ' - ' . $row['model'] . '</h6>

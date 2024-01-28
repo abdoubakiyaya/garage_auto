@@ -43,7 +43,7 @@ if (isset($_POST['loginUser'])) {
 <?php } ?>
 
 <div class="container py-5">
-  <div class="form-signin m-auto bg-white py-5 col-4 rounded-2 shadow" style="max-width: px; padding: 1rem">
+  <div class="form-signin m-auto py-5 col-4 rounded-2 bg-body-secondary" style="max-width: px; padding: 1rem">
     <form method="post">
       <!-- <img class="mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
       <div class="text-center">
@@ -63,9 +63,3 @@ if (isset($_POST['loginUser'])) {
     </form>
   </div>
 </div>
-
-
-
-<?php
-require_once __DIR__ . "/templates/footer.php";
-?>

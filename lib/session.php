@@ -10,30 +10,6 @@ session_set_cookie_params([
 session_start();
 
 
-// function adminOnly()
-// {
-//   if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 'admin') {
-//     // Rediriger vers la page de connexion
-//     header("Location: ../login.php");
-//     exit();
-//   }
-// }
-
-/////------------------------------------------------------///////////////
-//function adminOnly()
-// {
-//   // Assurez-vous que la session a été démarrée
-//   if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
-//   }
-
-//   // Vérifiez s'il n'a pas le rôle "admin"
-//   if (!isset($_SESSION['user']['role']) !== 'admin') {
-//     // Rediriger vers la page d'accueil admin
-//     //header("Location: ../admin/index.php");
-//     exit();
-//   }
-// }
 
 
 ////////---------------------------------
@@ -63,7 +39,7 @@ function adminOnly()
                   </div>
               </div>
           </div>
-        ';
+      ';
     exit();
   }
 }

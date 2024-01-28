@@ -1,8 +1,8 @@
-<div class="container mt-5">
+<div class="container">
   <h2 class="mb-4">Prendre rendez-vous</h2>
   <form method="post" action="/lib/traitement_rendezvous.php"> <!-- Assurez-vous d'ajouter un attribut "method" et "action" au formulaire -->
     <div class="form-row">
-      <div class="form-group col-md-6 my-2">
+      <div class="form-group col-md-6 ">
         <label for="nom">Nom</label>
         <input type="text" class="form-control" id="nom" name="nom" placeholder="Entrez votre nom" required>
       </div>
@@ -31,6 +31,6 @@
       <label for="message">Message (facultatif)</label>
       <textarea class="form-control" id="message" name="message" rows="4" placeholder="Entrez votre message"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Prendre rendez-vous</button>
+    <button type="submit" class="btn btn-danger">Prendre rendez-vous</button>
   </form>
 </div>

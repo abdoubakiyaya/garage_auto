@@ -43,7 +43,9 @@ $mainMenu = [
 
 
   <title>Garage V.Parrot</title>
+  <style>
 
+  </style>
 </head>
 
 <body>
@@ -58,7 +60,7 @@ $mainMenu = [
 
       <ul class="nav nav-underline">
         <?php foreach ($mainMenu as $page => $titre) { ?>
-          <li class="nav-item"><a href="<?= $page; ?>" class="nav-link 
+          <li class="nav-item"><a href="<?= $page; ?>" class="nav-link link-danger 
           <?php if (basename($_SERVER['SCRIPT_NAME']) === $page) {
             echo 'active';
           } ?>"><?= $titre; ?></a></li>
@@ -68,11 +70,8 @@ $mainMenu = [
       <div class="mb-2 justify-content-center mb-md-2">
         <?php if (isset($_SESSION['user'])) { ?>
           <!-- Utilisateur connecté -->
-          <p class="text-white me-2">Bonjour, <?= $_SESSION['user_firstname']; ?>!</p>
-          <a href="logout.php" class="btn btn-outline-primary">Déconnexion</a>
         <?php } else { ?>
           <!-- Utilisateur non connecté -->
-          <a href="login.php" class="btn btn-sm btn-outline-primary me-2">Login</a>
         <?php } ?>
       </div>
     </header>

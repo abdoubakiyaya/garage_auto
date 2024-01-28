@@ -7,7 +7,6 @@ require_once __DIR__ . "/../lib/session.php";
 
 require_once __DIR__ . "/templates/header.php";
 
-adminOnly();
 
 $errors = [];
 $messages = [];
@@ -43,25 +42,31 @@ if (isset($_POST['addUser'])) {
   <form method="POST">
     <div class="mb-3">
       <label for="first_name" class="form-label">Prénom</label>
-      <input type="text" class="form-control" id="first_name" name="first_name">
+      <input type="text" class="form-control" id="first_name" name="first_name" required>
     </div>
     <div class="mb-3">
       <label for="last_name" class="form-label">Nom</label>
-      <input type="text" class="form-control" id="last_name" name="last_name">
+      <input type="text" class="form-control" id="last_name" name="last_name" required>
     </div>
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" name="email">
+      <input type="email" class="form-control" id="email" name="email" required>
     </div>
     <div class="mb-3">
       <label for="password" class="form-label">Mot de passe</label>
-      <input type="password" class="form-control" id="password" name="password">
+      <input type="password" class="form-control" id="password" name="password" required>
+    </div>
+    <!-- Champ de rôle non modifiable -->
+    <div class="mb-3">
+      <label for="role" class="form-label">Rôle</label>
+      <input type="text" class="form-control" id="role" name="role" value="user" readonly>
     </div>
 
     <input type="submit" name="addUser" class="btn btn-primary" value="Enregistrer">
 
   </form>
 </div>
+
 
 <?php
 
