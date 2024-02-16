@@ -108,8 +108,8 @@ $prestations = getPrestations($pdo);
       $commentaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       foreach ($commentaires as $commentaire) {
-        echo '<div class="p-5 m-">';
-        echo '<div class="card h-100">';
+        echo '<div class="">';
+        echo '<div class="m-2 col-sm- card card-mobile p-2 h-">';
         echo '<div class="card-body">';
         echo '<h5 class="card-title">' . $commentaire['nom_utilisateur'] . '</h5>';
         echo '<p class="card-text">' . $commentaire['commentaire'] . '</p>';

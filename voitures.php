@@ -77,7 +77,7 @@ require_once __DIR__ . "/lib/pdo.php";
 
     </div>
 
-    <div class="col-md-9 ">
+    <div class="col-md-8 ">
       <br />
 
       <div class="row row-cols-1 row-cols-md-3 g-4 py-5 filter_data">
