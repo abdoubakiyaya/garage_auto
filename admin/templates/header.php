@@ -27,7 +27,7 @@ $adminMenu = [
 <body>
   <div class="d-flex">
     <header class="">
-      <div class="d-flex flex-column flex-shrink-0 p-4 text-bg-dark flex-wrap">
+      <div class="d-flex flex-column flex-shrink-0 p-4 text-bg-dark flex-wrap" style="height: 100%;">
         <div class="dropdown py-4">
           <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
@@ -51,8 +51,8 @@ $adminMenu = [
           <?php } ?>
         </ul>
 
-        <hr>
-        <div class="text-center">
+        <div class="text-center mt-auto pb-5">
+          <hr>
           <a href="/" class="text-white text-decoration-none">
             <span class="fs-4 fw-bold text-nowrap">Grage V.Parrot</span>
           </a>

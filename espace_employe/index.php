@@ -1,7 +1,5 @@
 <?php
-
 require_once __DIR__ . "/../espace_employe/templates/header.php";
-
 ?>
 
 
@@ -32,11 +30,9 @@ require_once __DIR__ . "/../espace_employe/templates/header.php";
       </div>
     </div>
   </section>
-
-
 </div>
 
 <?php
-// require_once __DIR__ . "/../admin/templates/footer.php";
+require_once __DIR__ . "/../admin/templates/footer.php";
 
 ?>

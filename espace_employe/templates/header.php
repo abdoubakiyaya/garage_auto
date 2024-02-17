@@ -1,8 +1,4 @@
 <?php
-// require_once __DIR__ . "/../../lib/session.php";
-// require_once __DIR__ . "/../../lib/config.php";
-// require_once __DIR__ . "/../../lib/pdo.php";
-
 
 $a_employeMenu = [
   'index.php' => 'Tableau de bord',
@@ -10,14 +6,6 @@ $a_employeMenu = [
   'commentaires.php' => 'Commentaires',
 ];
 
-// $adminMenu = [
-//   'index.php' => 'Tableau de bord',
-//   'prestations.php' => 'Prestations',
-//   'articles.php' => 'Articles',
-//   'horaire.php' => 'Horaires',
-//   'utilisateurs.php' => 'Utilisateurs',
-//   'commentaires.php' => 'Commentaires',
-// ];
 ?>
 
 
@@ -36,10 +24,10 @@ $a_employeMenu = [
 
 <body>
   <div class="d-flex">
-    <header class="h-50">
-      <div class="d-flex  flex-column h-100 flex-shrink-0  p-4 text-bg-dark flex-wrap">
+    <header class="">
+      <div class="d-flex flex-column flex-shrink-0 p-4 text-bg-dark flex-wrap" style="height: 100%;">
         <div class="dropdown py-4">
-          <a href="" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="#" role="button" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
             <strong><?= isset($_SESSION['user']['first_name']) ? $_SESSION['user']['first_name'] : 'Admin'; ?></strong>
           </a>
@@ -51,7 +39,6 @@ $a_employeMenu = [
             <li><a class="dropdown-item" href="/logout.php">Déconnexion</a></li>
           </ul>
         </div>
-
         <ul class="nav nav-pills flex-column ">
           <?php foreach ($a_employeMenu as $page => $titre) { ?>
             <li class="nav-item"><a href="<?= $page; ?>" class="nav-link text-white 
@@ -61,17 +48,8 @@ $a_employeMenu = [
                 <?= $titre; ?></a></li>
           <?php } ?>
         </ul>
-        <div>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-        </div>
-        <hr>
-        <div class="text-center">
+        <div class="text-center mt-auto">
+          <hr>
           <a href="/index.php" class="text-white text-decoration-none" target="_blank" rel="noopener noreferrer">
             <span class="fs-4 fw-bold text-nowrap">Grage V.Parrot</span>
           </a>

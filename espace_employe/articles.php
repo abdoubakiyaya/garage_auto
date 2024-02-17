@@ -25,7 +25,7 @@ $totalPages = ceil($totalCars / _ADMIN_ITEM_PER_PAGE_);
 ?>
 
 <div class="m-auto">
-  <h1 class="display-5 fw-bold text-body-emphasis">Articles</h1>
+  <!-- <h1 class="display-5 fw-bold text-body-emphasis">Articles</h1> -->
   <div class="d-flex gap-2 justify-content-left  py-5">
     <a class="btn btn-primary d-inline-flex align-items-left" href="article.php">
       Ajouter un article
@@ -70,6 +70,6 @@ $totalPages = ceil($totalCars / _ADMIN_ITEM_PER_PAGE_);
 </div>
 
 <?php
+require_once __DIR__ . "/../admin/templates/footer.php";
 
-// require_once __DIR__ . "/templates/footer.php";
 ?>

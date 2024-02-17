@@ -17,10 +17,10 @@ if (isset($_POST['loginUser'])) {
   if ($user) {
     session_regenerate_id(true);
     $_SESSION['user'] = $user;
-    if ($user['role'] === 'admin' || $user['role'] === 'user') {
+    if ($user['role'] === 'admin') {
       header('location: admin/index.php');
-    } else {
-      header('location: index.php');
+    } else if ($user['role'] === 'user') {
+      header('location: espace_employe/index.php');
     }
   } else {
     $errors[] = 'Email ou mot de passe incorrect';
