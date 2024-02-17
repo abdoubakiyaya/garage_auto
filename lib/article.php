@@ -47,15 +47,15 @@ function getTotalCars(PDO $pdo): int|bool
 }
 
 
-function saveCar(PDO $pdo, string $brand, string $model, int $year, string $fuel_type, int $mileage, int $price, ?string $image, string $detail, int $id = null): bool
+function saveCar(PDO $pdo, string $brand, string $model, int $year, string $fuel_type, int $mileage, int $price, ?string $image, string $detail, int $status, int $id = null): bool
 {
   if ($id === null) {
     // Insertion d'une nouvelle voiture
-    $query = $pdo->prepare("INSERT INTO cars (brand, model, year, fuel_type, mileage, price, image, detail) "
-      . "VALUES(:brand, :model, :year, :fuel_type, :mileage, :price, :image, :detail)");
+    $query = $pdo->prepare("INSERT INTO cars (brand, model, year, fuel_type, mileage, price, image, detail, status) "
+      . "VALUES(:brand, :model, :year, :fuel_type, :mileage, :price, :image, :detail, :status)");
   } else {
     // Mise à jour d'une voiture existante
-    $query = $pdo->prepare("UPDATE cars SET brand = :brand, model = :model, year = :year, fuel_type = :fuel_type, "
+    $query = $pdo->prepare("UPDATE cars SET brand = :brand, model = :model, year = :year, fuel_type = :fuel_type, status = :status,"
       . "mileage = :mileage, price = :price, image = :image, detail = :detail WHERE idCars = :idCars");
 
     $query->bindValue(':idCars', $id, PDO::PARAM_INT);
@@ -69,6 +69,7 @@ function saveCar(PDO $pdo, string $brand, string $model, int $year, string $fuel
   $query->bindValue(':price', $price, PDO::PARAM_INT);
   $query->bindValue(':image', $image, PDO::PARAM_STR);
   $query->bindValue(':detail', $detail, PDO::PARAM_STR);
+  $query->bindValue(':status', $status, PDO::PARAM_STR);
 
   return $query->execute();
 }

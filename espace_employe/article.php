@@ -18,8 +18,7 @@ $car = [
   'detail' => '',
   'fuel_type' => '',
   'year' => '',
-  'price' => '',
-  'status' => ''
+  'price' => ''
 ];
 
 
@@ -62,7 +61,7 @@ if (isset($_POST['saveCar'])) {
     if (isset($_GET['id'])) {
       if (isset($_POST['delete_image'])) {
         // Si on a coché la case de suppression d'image, on supprime l'image
-        unlink(dirname(__DIR__) . _ASSETS_IMAGES_FOLDER_ . $_POST['image']);
+        unlink(dirname(__DIR__) . _CARS_IMAGES_FOLDER_ . $_POST['image']);
       } else {
         $fileName = $_POST['image'];
       }
@@ -100,8 +99,7 @@ if (isset($_POST['saveCar'])) {
           'detail' => '',
           'fuel_type' => '',
           'year' => '',
-          'price' => '',
-          'status' => ''
+          'price' => ''
         ];
       }
     } else {

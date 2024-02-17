@@ -32,7 +32,7 @@ function adminOnly()
                               <h1 class="modal-title text-warning fs-5">Avertissement</h1>
                           </div>
                           <div class="modal-body py-0">
-                              <p>Vous n\'avez pas les autorisations nécessaires pour accéder à cette page.</p>
+                              <p>Vous n\'êtes pas autorisé à effectuer cette opération.</p>
                               <p>Cliquez <a href="' . htmlspecialchars("index.php") . '">ici</a> pour revenir à la page d\'accueil.</p>
                           </div>                       
                       </div>
