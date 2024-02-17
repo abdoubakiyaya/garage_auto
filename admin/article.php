@@ -171,12 +171,12 @@ if (isset($_POST['saveCar'])) {
         </div>
         <p class="fst-italic fs-6"> <span class="text-danger">Attention !</span> Vous devez garder le choix par defaut <span class="text-danger">(1)</span> pour que la voiture ajoutée soit visible sur le site.</p>
 
-        <?php if (isset($_GET['id']) && isset($car['image'])) { ?>
+        <?php if (isset($_GET['id']) && isset(htmlentities($car['image']))) { ?>
           <div class="mb-3">
-            <img src="<?= _CARS_IMAGES_FOLDER_ . $car['image'] ?>" alt="<?= $car['brand'] ?>" width="100">
+            <img src="<?= _CARS_IMAGES_FOLDER_ . htmlentities($car['image']) ?>" alt="<?= htmlentities($car['brand'])  ?>" width="100">
             <label for="delete_image">Supprimer l'image</label>
             <input type="checkbox" name="delete_image" id="delete_image">
-            <input type="hidden" name="image" value="<?= $car['image']; ?>">
+            <input type="hidden" name="image" value="<?= htmlentities($car['image']); ?>">
           </div>
         <?php } ?>
 

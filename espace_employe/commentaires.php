@@ -48,9 +48,9 @@ require_once __DIR__ . "/../lib/session.php";
     echo '<td>' . $commentaire['note'] . '</td>';
     echo '<td>' . $commentaire['commentaire'] . '</td>';
     echo '<td>';
-    echo '<a href="approuver_commentaire.php?id=' . $commentaire['idCommentaire'] . '" class="btn btn-success">Approuver</a>';
+    echo '<a href="approuver_commentaire.php?id=' . htmlentities($commentaire['idCommentaire'])  . '" class="btn btn-success">Approuver</a>';
     echo ' ';
-    echo '<a href="rejeter_commentaire.php?id=' . $commentaire['idCommentaire'] . '" class="btn btn-danger">Rejeter</a>';
+    echo '<a href="rejeter_commentaire.php?id=' . htmlentities($commentaire['idCommentaire'])  . '" class="btn btn-danger">Rejeter</a>';
     echo '</td>';
     echo '</tr>';
   }

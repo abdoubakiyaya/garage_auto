@@ -40,10 +40,10 @@ $totalPages = ceil($totalPrestations / _ADMIN_ITEM_PER_PAGE_);
     <tbody>
       <?php foreach ($prestations as $prestation) { ?>
         <tr>
-          <th scope="row"><?= $prestation["idPrestation"]; ?></th>
-          <td><?= $prestation["prestation_name"]; ?></td>
-          <td><a href="prestation.php?id=<?= $prestation['idPrestation'] ?>">Modifier</a>
-            | <a href="prestation_delete.php?id=<?= $prestation['idPrestation'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette prestation ?')">Supprimer</a></td>
+          <th scope="row"><?= htmlentities($prestation["idPrestation"]); ?></th>
+          <td><?= htmlentities($prestation["prestation_name"]); ?></td>
+          <td><a href="prestation.php?id=<?= htmlentities($prestation['idPrestation']) ?>">Modifier</a>
+            | <a href="prestation_delete.php?id=<?= htmlentities($prestation['idPrestation'])  ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cette prestation ?')">Supprimer</a></td>
         </tr>
       <?php } ?>
     </tbody>

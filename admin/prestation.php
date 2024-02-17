@@ -117,15 +117,15 @@ if (isset($_POST['savePrestation'])) {
       <form class="row g-3" method="POST" enctype="multipart/form-data">
         <div class="col-md-6">
           <label for="prestation_name" class="form-label">Prestation</label>
-          <input type="text" name="prestation_name" class="form-control" id="prestation_name" value="<?= $prestation['prestation_name']; ?>">
+          <input type="text" name="prestation_name" class="form-control" id="prestation_name" value="<?= htmlentities($prestation['prestation_name']); ?>">
         </div>
         <div class="col-12">
           <label for="price" class="form-label">Prix</label>
-          <input type="number" name="price" class="form-control" id="price" value="<?= $prestation['price']; ?>">
+          <input type="number" name="price" class="form-control" id="price" value="<?= htmlentities($prestation['price']); ?>">
         </div>
         <div class="mb-3">
           <label for="description" class="form-label">Description</label>
-          <textarea class="form-control" name="description" id="description" rows="3"><?= $prestation['description']; ?></textarea>
+          <textarea class="form-control" name="description" id="description" rows="3"><?= htmlentities($prestation['description']); ?></textarea>
         </div>
         <div class="mb-3">
           <label for="prestation_image" class="form-label">Image de la prestation</label>
@@ -134,10 +134,10 @@ if (isset($_POST['savePrestation'])) {
 
         <?php if (isset($_GET['id']) && isset($prestation['image'])) { ?>
           <div class="mb-3">
-            <img src="<?= _PRESTATIONS_IMAGES_FOLDER_ . $prestation['image'] ?>" alt="<?= $prestation['prestation_name'] ?>" width="100">
+            <img src="<?= _PRESTATIONS_IMAGES_FOLDER_ . htmlentities($prestation['image']) ?>" alt="<?= htmlentities($prestation['prestation_name']) ?>" width="100">
             <label for="delete_image">Supprimer l'image</label>
             <input type="checkbox" name="delete_image" id="delete_image">
-            <input type="hidden" name="image" value="<?= $prestation['image']; ?>">
+            <input type="hidden" name="image" value="<?= htmlentities($prestation['image']); ?>">
           </div>
         <?php } ?>
 

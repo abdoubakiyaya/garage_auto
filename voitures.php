@@ -43,7 +43,7 @@ require_once __DIR__ . "/lib/pdo.php";
           foreach ($result as $row) {
           ?>
             <div class="list-group-item checkbox">
-              <label><input type="checkbox" class="common_selector brand" value="<?php echo $row['brand']; ?>"> <?php echo $row['brand']; ?></label>
+              <label><input type="checkbox" class="common_selector brand" value="<?= htmlentities($row['brand']) ?>"> <?= htmlentities($row['brand']) ?></label>
             </div>
           <?php
           }
@@ -64,7 +64,7 @@ require_once __DIR__ . "/lib/pdo.php";
           foreach ($result as $row) {
           ?>
             <div class="list-group-item checkbox">
-              <label><input type="checkbox" class="common_selector year" value="<?php echo $row['year']; ?>"> <?php echo $row['year']; ?></label>
+              <label><input type="checkbox" class="common_selector year" value="<?= htmlentities($row['year']) ?>"> <?= htmlentities($row['year']) ?></label>
             </div>
           <?php
           }
@@ -72,7 +72,6 @@ require_once __DIR__ . "/lib/pdo.php";
           ?>
         </div>
       </div>
-
 
 
     </div>

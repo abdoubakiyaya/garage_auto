@@ -42,10 +42,10 @@ $totalPages = ceil($totalCars / _ADMIN_ITEM_PER_PAGE_);
     <tbody>
       <?php foreach ($cars as $car) { ?>
         <tr>
-          <th scope="row"><?= $car["idCars"]; ?></th>
-          <td><?= $car["brand"]; ?></td>
-          <td><a href="article.php?id=<?= $car['idCars'] ?>">Modifier</a>
-            | <a href="article_delete.php?id=<?= $car['idCars'] ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer</a></td>
+          <th scope="row"><?= htmlentities($car['idCars']) ?></th>
+          <td><?= htmlentities($car['brand']) ?></td>
+          <td><a href="article.php?id=<?= htmlentities($car['idCars'])  ?>">Modifier</a>
+            | <a href="article_delete.php?id=<?= htmlentities($car['idCars']) ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')">Supprimer</a></td>
         </tr>
       <?php } ?>
     </tbody>

@@ -111,13 +111,13 @@ $prestations = getPrestations($pdo);
         echo '<div class="">';
         echo '<div class="m-2 col-sm- card card-mobile p-2 h-">';
         echo '<div class="card-body">';
-        echo '<h5 class="card-title">' . $commentaire['nom_utilisateur'] . '</h5>';
-        echo '<p class="card-text">' . $commentaire['commentaire'] . '</p>';
+        echo '<h5 class="card-title">' . htmlentities($commentaire['nom_utilisateur']) . '</h5>';
+        echo '<p class="card-text">' . htmlentities($commentaire['commentaire']) . '</p>';
         echo '<div class="d-flex justify-content-between">';
-        echo '<small>' . $commentaire['date_creation'] . '</small>';
+        echo '<small>' . htmlentities($commentaire['date_creation']) . '</small>';
         echo '<div>';
         // Étoiles (exemple avec 3 étoiles)
-        for ($i = 0; $i < $commentaire['note']; $i++) {
+        for ($i = 0; $i < htmlentities($commentaire['note']); $i++) {
           echo '<span class="text-warning">&#9733;</span>';
         }
         echo '</div>';

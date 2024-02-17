@@ -57,15 +57,15 @@ require_once __DIR__ . "/../lib/session.php";
       // Affichage des horaires actuels depuis la base de données
       foreach ($schedules as $schedule) {
         echo "<tr>";
-        echo "<td>{$schedule['jour_semaine']}</td>";
+        echo "<td>" . htmlspecialchars($schedule['jour_semaine']) . "</td>";
 
         if ($schedule['ferme'] == 1) {
           echo "<td colspan='2'>Fermé</td>";
-          echo "<td><input type='checkbox' name='{$schedule['jour_semaine']}_closed' checked></td>";
+          echo "<td><input type='checkbox' name='" . htmlspecialchars($schedule['jour_semaine']) . "_closed' checked></td>";
         } else {
-          echo "<td><input type='time' name='{$schedule['jour_semaine']}_ouverture' value='{$schedule['heure_ouverture']}'></td>";
-          echo "<td><input type='time' name='{$schedule['jour_semaine']}_fermeture' value='{$schedule['heure_fermeture']}'></td>";
-          echo "<td><input type='checkbox' name='{$schedule['jour_semaine']}_closed'></td>";
+          echo "<td><input type='time' name='" . htmlspecialchars($schedule['jour_semaine']) . "_ouverture' value='" . htmlspecialchars($schedule['heure_ouverture']) . "'></td>";
+          echo "<td><input type='time' name='" . htmlspecialchars($schedule['jour_semaine']) . "_fermeture' value='" . htmlspecialchars($schedule['heure_fermeture']) . "'></td>";
+          echo "<td><input type='checkbox' name='" . htmlspecialchars($schedule['jour_semaine']) . "_closed'></td>";
         }
 
         echo "</tr>";

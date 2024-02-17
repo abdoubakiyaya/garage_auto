@@ -43,28 +43,28 @@ if (isset($_POST["action"])) {
   if ($total_row > 0) {
     foreach ($result as $row) {
       $output .= '
-                <div class="card-group">
-                    <img src="/uploads/articles/' . $row['image'] . '" class="card-img-top border" alt="' . $row['brand'] . '">
-                    <div class="card">
-                        <div class="card-body">
-                            <h6 class="card-marque fw-bold">' . $row['brand'] . ' - ' . $row['model'] . '</h6>
-                            <h6 class="card-type-carburant fw-bold">' . $row['fuel_type'] . '</h6>
-                            <h6 class="card-annee">Année ' . $row['year'] . '</h6>
-                            <h6 class="card-kilometrage">' . $row['mileage'] . ' kilomètres</h6>
-                            <hr>
-                            <h6 class="card-price fw-bold">' . $row['price'] . '</h6>
-                        </div>
-                        <div class="text-center pb-3">
-                            <a href="/voiture.php?id=' . $row['idCars'] . '" class="btn btn-sm btn-dark">
-                                Détails
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            ';
+    <div class="card-group">
+        <img src="/uploads/articles/' . htmlentities($row['image']) . '" class="card-img-top border" alt="' . htmlentities($row['brand']) . '">
+        <div class="card">
+            <div class="card-body">
+                <h6 class="card-marque fw-bold">' . htmlentities($row['brand']) . ' - ' . htmlentities($row['model']) . '</h6>
+                <h6 class="card-type-carburant fw-bold">' . htmlentities($row['fuel_type']) . '</h6>
+                <h6 class="card-annee">Année ' . htmlentities($row['year']) . '</h6>
+                <h6 class="card-kilometrage">' . htmlentities($row['mileage']) . ' kilomètres</h6>
+                <hr>
+                <h6 class="card-price fw-bold">' . htmlentities($row['price']) . '</h6>
+            </div>
+            <div class="text-center pb-3">
+                <a href="/voiture.php?id=' . htmlentities($row['idCars']) . '" class="btn btn-sm btn-dark">
+                    Détails
+                </a>
+            </div>
+        </div>
+    </div>
+';
     }
   } else {
-    $output = '<h3>No Data Found</h3>';
+    $output = '<h3>Aucune voiture trouvé</h3>';
   }
 
   echo $output;

@@ -42,17 +42,18 @@ require_once __DIR__ . "/../lib/pdo.php";
 
   foreach ($commentaires as $commentaire) {
     echo '<tr>';
-    echo '<td>' . $commentaire['idCommentaire'] . '</td>';
-    echo '<td>' . $commentaire['nom_utilisateur'] . '</td>';
-    echo '<td>' . $commentaire['note'] . '</td>';
-    echo '<td>' . $commentaire['commentaire'] . '</td>';
+    echo '<td>' . htmlspecialchars($commentaire['idCommentaire']) . '</td>';
+    echo '<td>' . htmlspecialchars($commentaire['nom_utilisateur']) . '</td>';
+    echo '<td>' . htmlspecialchars($commentaire['note']) . '</td>';
+    echo '<td>' . htmlspecialchars($commentaire['commentaire']) . '</td>';
     echo '<td>';
-    echo '<a href="approuver_commentaire.php?id=' . $commentaire['idCommentaire'] . '" class="btn btn-success">Approuver</a>';
+    echo '<a href="approuver_commentaire.php?id=' . htmlspecialchars($commentaire['idCommentaire']) . '" class="btn btn-success">Approuver</a>';
     echo ' ';
-    echo '<a href="rejeter_commentaire.php?id=' . $commentaire['idCommentaire'] . '" class="btn btn-danger">Rejeter</a>';
+    echo '<a href="rejeter_commentaire.php?id=' . htmlspecialchars($commentaire['idCommentaire']) . '" class="btn btn-danger">Rejeter</a>';
     echo '</td>';
     echo '</tr>';
   }
+
 
   echo '</tbody>';
   echo '</table>';
