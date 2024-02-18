@@ -50,8 +50,7 @@ CREATE TABLE `cars` (
     `idCars` int(11) NOT NULL, `brand` varchar(255) NOT NULL, `model` varchar(255) NOT NULL, `year` int(11) NOT NULL, `fuel_type` varchar(50) NOT NULL, `mileage` int(11) NOT NULL, `price` decimal(10, 2) NOT NULL, `image` varchar(255) DEFAULT NULL, `detail` text DEFAULT NULL,
 );
 
-ALTER TABLE cars
-MODIFY COLUMN idCars INT AUTO_INCREMENT PRIMARY KEY;
+ALTER TABLE cars MODIFY COLUMN idCars INT AUTO_INCREMENT PRIMARY KEY;
 
 INSERT INTO
     cars (
@@ -262,8 +261,7 @@ ALTER TABLE rendezvous DROP COLUMN topic;
 ALTER TABLE rendezvous
 MODIFY COLUMN idRendezvous INT AUTO_INCREMENT PRIMARY KEY;
 
-ALTER TABLE horaires
-ADD COLUMN ferme TINYINT(1) NOT NULL DEFAULT 0;
+ALTER TABLE horaires ADD COLUMN ferme TINYINT(1) NOT NULL DEFAULT 0;
 
 GRANT
 SELECT,
@@ -275,3 +273,7 @@ DELETE ON garage_automobile_vp.prestations TO 'dm8lyomelexxg2mq' @'r4919aobtbi97
 ALTER TABLE cars ADD COLUMN status INT;
 
 UPDATE cars SET status = 1;
+
+SHOW GRANTS FOR 'user' @'host';
+
+GRANT ALL PRIVILEGES ON garage_automobile_vp.* TO 'user' @'host';
