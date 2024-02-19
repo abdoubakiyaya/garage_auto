@@ -36,7 +36,7 @@
 --         'Test', 'User', 'test@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G'
 --     );
 
-USE garage_automobile_vp;
+-- USE garage_automobile_vp;
 
 -- ajouter la colonne role dans la base de données users
 
@@ -179,7 +179,7 @@ VALUES (
         12, 'Réparation de la transmission', 'Réparation des problèmes de transmission.', 100.00, 'reparation_transmission.jpg'
     );
 
-USE garage_automobile_vp;
+-- USE garage_automobile_vp;
 
 -- Redonner tous les droits à vincent parrot
 -- afin de pouvoir manipuler la base de données en totalité
@@ -193,7 +193,7 @@ USE garage_automobile_vp;
 --UPDATE,
 ---DELETE ON garage_automobile_vp.cars TO 'vincent_parrot' @'localhost';
 
-USE garage_automobile_vp;
+-- USE garage_automobile_vp;
 
 --donner les droits a vincent parrot quant à l'utilisation de la table prestations
 --GRANT
@@ -240,7 +240,7 @@ VALUES ('lundi', '09:00', '18:00'),
     ('dimanche', 'fermé', 'fermé');
 -- Notez que nous utilisons 'fermé' pour indiquer que le dimanche est fermé
 
-USE garage_automobile_vp;
+-- USE garage_automobile_vp;
 
 CREATE TABLE commentaires (
     idCommentaire INT AUTO_INCREMENT PRIMARY KEY, nom_utilisateur varchar(255) NOT NULL, note int(11) NOT NULL, commentaire text NOT NULL, statut enum('en_attente', 'approuvé') DEFAULT 'en_attente', date_creation timestamp NOT NULL DEFAULT current_timestamp()
