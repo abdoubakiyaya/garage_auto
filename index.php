@@ -1,3 +1,4 @@
+-- Active: 1708337134018@@r4919aobtbi97j46.cbetxkdyhwsb.us-east-1.rds.amazonaws.com@3306
 <?php
 require_once __DIR__ . "/lib/config.php";
 require_once __DIR__ . "/lib/pdo.php";
