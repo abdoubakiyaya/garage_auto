@@ -1,8 +1,8 @@
 -- Active: 1703293407415@@garage_automobile_vp.local@3306@garage_automobile_vp
 
-CREATE DATABASE garage_automobile_vp;
+--CREATE DATABASE garage_automobile_vp;
 
-USE garage_automobile_vp;
+--USE garage_automobile_vp;
 
 CREATE TABLE users (
     idUser INTEGER AUTO_INCREMENT, last_name VARCHAR(255), first_name VARCHAR(255), email VARCHAR(255) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL, PRIMARY KEY (idUser)
@@ -10,17 +10,16 @@ CREATE TABLE users (
 
 -- Création de l’utilisateur de la base de données (vincent parrot)
 
-CREATE USER 'vincent_parrot' @'localhost' IDENTIFIED BY '3f7zhhRn4NH69R23';
+--CREATE USER 'vincent_parrot' @'localhost' IDENTIFIED BY '3f7zhhRn4NH69R23';
 
 -- Attribution des droits sur la table "users"
 
-GRANT
-SELECT,
-INSERT
-,
-UPDATE,
-DELETE ON garage_automobile_vp.users TO 'vincent_parrot' @'localhost';
-
+--GRANT
+--SELECT,
+--NSERT
+--,
+--UPDATE,
+--DELETE ON garage_automobile_vp.users TO 'vincent_parrot' @'localhost';
 -- Insertion des utilisateurs de l'application en BDD
 
 INSERT INTO
@@ -185,48 +184,48 @@ USE garage_automobile_vp;
 -- Redonner tous les droits à vincent parrot
 -- afin de pouvoir manipuler la base de données en totalité
 
-GRANT ALL PRIVILEGES ON garage_automobile_vp.* TO 'vincent_parrot' @'localhost';
+--GRANT ALL PRIVILEGES ON garage_automobile_vp.* TO 'vincent_parrot' @'localhost';
 
-GRANT
-SELECT,
-INSERT
-,
-UPDATE,
-DELETE ON garage_automobile_vp.cars TO 'vincent_parrot' @'localhost';
+--GRANT
+--SELECT,
+--INSERT
+--,
+--UPDATE,
+---DELETE ON garage_automobile_vp.cars TO 'vincent_parrot' @'localhost';
 
 USE garage_automobile_vp;
 
 --donner les droits a vincent parrot quant à l'utilisation de la table prestations
-GRANT
-SELECT,
-INSERT
-,
-UPDATE,
-DELETE ON garage_automobile_vp.prestations TO 'vincent_parrot' @'localhost';
+--GRANT
+--SELECT,
+--INSERT
+--,
+--UPDATE,
+--DELETE ON garage_automobile_vp.prestations TO 'vincent_parrot' @'localhost';
 
 --ajouter la table rendezous
 CREATE TABLE `rendezvous` (
     `idRendezvous` int(11) NOT NULL, `nom` varchar(255) NOT NULL, `prenom` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `telephone` varchar(20) NOT NULL, `date_rendezvous` date NOT NULL, `heure_rendezvous` time NOT NULL, `message` text DEFAULT NULL, `created_at` timestamp NOT NULL DEFAULT current_timestamp(), `topic` varchar(255) DEFAULT NULL
 );
 
-GRANT
-SELECT,
-INSERT
-,
-UPDATE,
-DELETE ON garage_automobile_vp.rendezvous TO 'vincent_parrot' @'localhost';
+--GRANT
+--SELECT,
+--INSERT
+--,
+--UPDATE,
+--DELETE ON garage_automobile_vp.rendezvous TO 'vincent_parrot' @'localhost';
 --ajouter la table horaires
 
 CREATE TABLE horaires (
     idHoraires INT AUTO_INCREMENT PRIMARY KEY, jour_semaine VARCHAR(10) NOT NULL, heure_ouverture TIME NOT NULL, heure_fermeture TIME NOT NULL
 );
 
-GRANT
-SELECT,
-INSERT
-,
-UPDATE,
-DELETE ON garage_automobile_vp.horaires TO 'vincent_parrot' @'localhost';
+--GRANT
+--SELECT,
+--INSERT
+--,
+--UPDATE,
+--DELETE ON garage_automobile_vp.horaires TO 'vincent_parrot' @'localhost';
 
 INSERT INTO
     horaires (
@@ -247,12 +246,12 @@ CREATE TABLE commentaires (
     idCommentaire INT AUTO_INCREMENT PRIMARY KEY, nom_utilisateur varchar(255) NOT NULL, note int(11) NOT NULL, commentaire text NOT NULL, statut enum('en_attente', 'approuvé') DEFAULT 'en_attente', date_creation timestamp NOT NULL DEFAULT current_timestamp()
 );
 
-GRANT
-SELECT,
-INSERT
-,
-UPDATE,
-DELETE ON garage_automobile_vp.commentaires TO 'vincent_parrot' @'localhost';
+--GRANT
+--SELECT,
+--INSERT
+--,
+--UPDATE,
+--DELETE ON garage_automobile_vp.commentaires TO 'vincent_parrot' @'localhost';
 
 -- supprimer la colonne topic de la table rendezvous
 
@@ -263,17 +262,17 @@ MODIFY COLUMN idRendezvous INT AUTO_INCREMENT PRIMARY KEY;
 
 ALTER TABLE horaires ADD COLUMN ferme TINYINT(1) NOT NULL DEFAULT 0;
 
-GRANT
-SELECT,
-INSERT
-,
-UPDATE,
-DELETE ON garage_automobile_vp.prestations TO 'dm8lyomelexxg2mq' @'r4919aobtbi97j46.cbetxkdyhwsb.us - east -1.rds.amazonaws.com';
+--GRANT
+--SELECT,
+--INSERT
+--,
+--UPDATE,
+--DELETE ON garage_automobile_vp.prestations TO 'dm8lyomelexxg2mq' @'r4919aobtbi97j46.cbetxkdyhwsb.us - east -1.rds.amazonaws.com';
 
 ALTER TABLE cars ADD COLUMN status INT;
 
 UPDATE cars SET status = 1;
 
-SHOW GRANTS FOR 'user' @'host';
+--SHOW GRANTS FOR 'user' @'host';
 
-GRANT ALL PRIVILEGES ON garage_automobile_vp.* TO 'user' @'host';
+--GRANT ALL PRIVILEGES ON garage_automobile_vp.* TO 'user' @'host';
