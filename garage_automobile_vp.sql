@@ -4,9 +4,9 @@
 
 --USE garage_automobile_vp;
 
-CREATE TABLE users (
-    idUser INTEGER AUTO_INCREMENT, last_name VARCHAR(255), first_name VARCHAR(255), email VARCHAR(255) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL, PRIMARY KEY (idUser)
-);
+-- CREATE TABLE users (
+--     idUser INTEGER AUTO_INCREMENT, last_name VARCHAR(255), first_name VARCHAR(255), email VARCHAR(255) NOT NULL UNIQUE, password VARCHAR(255) NOT NULL, PRIMARY KEY (idUser)
+-- );
 
 -- Création de l’utilisateur de la base de données (vincent parrot)
 
@@ -22,27 +22,27 @@ CREATE TABLE users (
 --DELETE ON garage_automobile_vp.users TO 'vincent_parrot' @'localhost';
 -- Insertion des utilisateurs de l'application en BDD
 
-INSERT INTO
-    users (
-        last_name, first_name, email, password
-    )
-VALUES (
-        'John', 'Doe', 'john.doe@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G'
-    ),
-    (
-        'Jane', 'Smith', 'jane.smith@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G'
-    ),
-    (
-        'Test', 'User', 'test@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G'
-    );
+-- INSERT INTO
+--     users (
+--         last_name, first_name, email, password
+--     )
+-- VALUES (
+--         'John', 'Doe', 'john.doe@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G'
+--     ),
+--     (
+--         'Jane', 'Smith', 'jane.smith@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G'
+--     ),
+--     (
+--         'Test', 'User', 'test@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G'
+--     );
 
 USE garage_automobile_vp;
 
 -- ajouter la colonne role dans la base de données users
 
-ALTER TABLE users ADD COLUMN role VARCHAR(255);
+-- ALTER TABLE users ADD COLUMN role VARCHAR(255);
 
-UPDATE users SET role = 'admin' WHERE idUser = 1;
+-- UPDATE users SET role = 'admin' WHERE idUser = 1;
 
 -- créer la base de données cars et ajouter les voitures
 CREATE TABLE `cars` (
