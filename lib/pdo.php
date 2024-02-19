@@ -13,8 +13,8 @@ if (getenv('JAWSDB_URL') !== false) {
 } else {
   // connexion locale
   $hostname = 'localhost';
-  $username = 'vincent_parrot';
-  $password = '3f7zhhRn4NH69R23';
+  $username = 'root';
+  $password = '';
   $database = 'garage_automobile_vp';
 }
 
