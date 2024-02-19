@@ -6,9 +6,9 @@ require_once __DIR__ . "/config.php";
 if (getenv('JAWSDB_URL') !== false) {
   $dbparts = parse_url(getenv('JAWSDB_URL'));
 
-  $hostname = $dbparts['r4919aobtbi97j46.cbetxkdyhwsb.us-east-1.rds.amazonaws.com'];
-  $username = $dbparts['dm8lyomelexxg2mq'];
-  $password = $dbparts['t9ogfpak8oj5mc3r'];
+  $hostname = $dbparts['host'];
+  $username = $dbparts['user'];
+  $password = $dbparts['pass'];
   $database = ltrim($dbparts['path'], '/');
 } else {
   // connexion locale
