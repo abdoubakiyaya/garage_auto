@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . "/config.php";
+require_once __DIR__ . "/pdo.php";
 
 
 // Récupération des données du formulaire 
@@ -11,7 +12,7 @@ $date_rendezvous = $_POST['date_rendezvous'];
 $heure_rendezvous = $_POST['heure_rendezvous'];
 $message = $_POST['message'];
 
-$pdo = new PDO("mysql:dbname=" . _DB_NAME_ . ";host=" . _DB_SERVER_ . ";charset=utf8mb4", _DB_USER_, _DB_PASSWORD_);
+// $pdo = new PDO("mysql:dbname=" . _DB_NAME_ . ";host=" . _DB_SERVER_ . ";charset=utf8mb4", _DB_USER_, _DB_PASSWORD_);
 
 // Préparez la requête SQL d'insertion
 $sql = "INSERT INTO rendezvous (nom, prenom, email, telephone, date_rendezvous, heure_rendezvous, message) 
