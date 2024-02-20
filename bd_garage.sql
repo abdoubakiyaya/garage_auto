@@ -1,35 +1,34 @@
--- Active: 1703293407415@@garage_automobile_vp.local@3306@garage_automobile_vp
 CREATE TABLE IF NOT EXISTS `users` (
     `idUser` INT AUTO_INCREMENT PRIMARY KEY, `last_name` VARCHAR(255), `first_name` VARCHAR(255), `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `role` VARCHAR(255)
 );
 
 INSERT INTO
     `users` (
-        `idUser`, `last_name`, `first_name`, `email`, `password`, `role`
+        `last_name`, `first_name`, `email`, `password`, `role`
     )
 VALUES (
-        1, 'John', 'Doe', 'john.doe@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G', 'admin'
+        'John', 'Doe', 'john.doe@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G', 'admin'
     ),
     (
-        2, 'Jane', 'Smith', 'jane.smith@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G', NULL
+        'Jane', 'Smith', 'jane.smith@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G', NULL
     ),
     (
-        3, 'Test', 'User', 'test@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G', NULL
+        'Test', 'User', 'test@example.com', '$2y$10$hv2m6oFnpMs6sZmpyNK1r.iWEJO/CU96h7b95VjYCC5Msw.lGdn8G', NULL
     ),
     (
-        4, '', '', '', '$2y$10$eykUugBFueqld5/lRvMMFe2S4M969lk1AInfLcmzP0/V0JD/FoEDe', 'user'
+        '', '', '', '$2y$10$eykUugBFueqld5/lRvMMFe2S4M969lk1AInfLcmzP0/V0JD/FoEDe', 'user'
     ),
     (
-        6, 'test', 'test', 'test@test.com', '$2y$10$K8oIyLMRZifbHstmtIWWHuNs8uy1OgyIhdtJHhNv.cRe19f3v3g32', 'user'
+        'test', 'test', 'test@test.com', '$2y$10$K8oIyLMRZifbHstmtIWWHuNs8uy1OgyIhdtJHhNv.cRe19f3v3g32', 'user'
     ),
     (
-        7, 'user', 'user', 'user@user.fr', '$2y$10$lNVfCgz7CpnjLGQGcpK.XeDX9IiConAzlBdJqvsfVQpMa.mPS3yYK', 'user'
+        'user', 'user', 'user@user.fr', '$2y$10$lNVfCgz7CpnjLGQGcpK.XeDX9IiConAzlBdJqvsfVQpMa.mPS3yYK', 'user'
     ),
     (
-        11, 'abd', 'bk', 'bkabd@tom.fr', '$2y$10$JiPvWjbsVFhbR821TZ3rjO1YTg3DRjU2YcvR3YaAarcWmVZ6W13P6', 'user'
+        'abd', 'bk', 'bkabd@tom.fr', '$2y$10$JiPvWjbsVFhbR821TZ3rjO1YTg3DRjU2YcvR3YaAarcWmVZ6W13P6', 'user'
     ),
     (
-        14, 'dd', 'bd', 'bd@dd.dd', '$2y$10$.KjqZteeI6qNA/o1Mg1PpOO8iAnSIVr4Yg.4gc/LsWdtTHO3.dm7i', 'admin'
+        'dd', 'bd', 'bd@dd.dd', '$2y$10$.KjqZteeI6qNA/o1Mg1PpOO8iAnSIVr4Yg.4gc/LsWdtTHO3.dm7i', 'admin'
     );
 
 CREATE TABLE IF NOT EXISTS `cars` (

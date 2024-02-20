@@ -10,7 +10,7 @@ require_once __DIR__ . "/../lib/config.php";
   <tbody>
     <?php
     // Connexion à la base de données
-    $pdo = new PDO("mysql:dbname=" . _DB_NAME_ . ";host=" . _DB_SERVER_ . ";charset=utf8mb4", _DB_USER_, _DB_PASSWORD_);
+    // $pdo = new PDO("mysql:dbname=" . _DB_NAME_ . ";host=" . _DB_SERVER_ . ";charset=utf8mb4", _DB_USER_, _DB_PASSWORD_);
 
     // Code PHP pour récupérer et afficher les horaires d'ouverture depuis la base de données
     $sql = "SELECT * FROM horaires";

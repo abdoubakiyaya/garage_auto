@@ -2,7 +2,7 @@
 
 define("_DOMAIN_", ".garage_automobile_vp.local");
 define("_DB_SERVER_", "localhost");
-define("_DB_NAME_", "garage_automobile_vp");
+define("_DB_NAME_", "bd_garage");
 define("_DB_USER_", "vincent_parrot"); // "vincent_parrot"
 define("_DB_PASSWORD_", "3f7zhhRn4NH69R23"); // "3f7zhhRn4NH69R23"
 
