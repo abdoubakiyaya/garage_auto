@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS `bd_garage`;
+
+USE `bd_garage`;
+
 CREATE TABLE IF NOT EXISTS `users` (
     `idUser` INT AUTO_INCREMENT PRIMARY KEY, `last_name` VARCHAR(255), `first_name` VARCHAR(255), `email` VARCHAR(255) NOT NULL, `password` VARCHAR(255) NOT NULL, `role` VARCHAR(255)
 );
